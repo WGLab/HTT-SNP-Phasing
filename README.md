@@ -7,6 +7,18 @@ Allele-specific CRISPR/Cas9 editing of the expanded huntingtin (mHTT) can be ach
 
 Sometimes long-read sequencing is available and people only have SNP genotypes identified from SNP arrays or short-read sequencing. In this case, phased SNPs (haplotypes) released in this study can be used as a reference panel for statistical phasing. In this repository, we provide a tutorial for statistical phasing using the HD haplotypes released in this study.  **Please note that results from statistical phasing are based on probabilities and we strongly recommend experimental validation for downstream clinical applications.**
 
+## Table of Contents
+- [Quick Start](#quick-start)
+- [Detailed Instructions](#detailed-instructions)
+  - [1. Download `SHAPEIT` and our data](#1-download-shapeit-and-our-data)
+  - [2. Reference haplotypes of HD population](#2-reference-haplotypes-of-hd-population)
+  - [3. Example data](#3-example-data)
+  - [4. Preprocessing of input data](#4-preprocessing-of-input-data)
+  - [5. Phasing](#5-phasing)
+    - [5.1 Output the most likely haplotype](#51-output-the-most-likely-haplotype)
+    - [5.2 Capturing phase uncertainty](#52-capturing-phase-uncertainty)
+
+
 ## Quick Start
 
 1. Download `SHAPEIT` following instructions [here](https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html#download). Academic users can download it for free. 
@@ -52,7 +64,9 @@ done
 rm shapeit*.log
 ```
 
+
 ## Detailed Instructions
+
 ### 1. Download `SHAPEIT` and our data
 
 In this tutorial, we will use [SHAPEIT](https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html) to perform statistical phasing. Instructions for downloading `SHAPEIT` are [here](https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html#download). Academic users can download it for free. 
