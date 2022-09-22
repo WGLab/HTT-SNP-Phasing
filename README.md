@@ -5,7 +5,7 @@ Huntington's disease (HD) is an autosomal dominant neurodegenerative disease. In
 Allele-specific CRISPR/Cas9 editing of the expanded huntingtin (mHTT) can be achived by taking advantage of heterozygous SNPs that either eliminate or create PAM sequences. To identify all potential SNPs that may be used for allele-specific deletion of the mHTT, we sequenced the exon-1 surrounding region (chr4:3069608-3079972, GRCh38) of two HD cohorts with a total of 1056 individuals using long-read sequencing. 
 
 
-Sometimes long-read sequencing is available and people only have SNP genotypes identified from SNP arrays or short-read sequencing. In this case, phased SNPs (haplotypes) released in this study can be used as a reference panel for statistical phasing. In this repository, we provide a tutorial for statistical phasing using the HD haplotypes released in this study.  **Please note that results from statistical phasing are based on probablities and we strongly recommend experimental validation for clinical applications.**
+Sometimes long-read sequencing is available and people only have SNP genotypes identified from SNP arrays or short-read sequencing. In this case, phased SNPs (haplotypes) released in this study can be used as a reference panel for statistical phasing. In this repository, we provide a tutorial for statistical phasing using the HD haplotypes released in this study.  **Please note that results from statistical phasing are based on probabilities and we strongly recommend experimental validation for downstream clinical applications.**
 
 ## Quick Start
 
@@ -52,7 +52,8 @@ done
 rm shapeit*.log
 ```
 
-## 1. Download `SHAPEIT` and our data
+## Detailed Instructions
+### 1. Download `SHAPEIT` and our data
 
 In this tutorial, we will use [SHAPEIT](https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html) to perform statistical phasing. Instructions for downloading `SHAPEIT` are [here](https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html#download). Academic users can download it for free. 
 
@@ -62,7 +63,7 @@ To download our data:
 git clone https://github.com/WGLab/HTT-SNP-Phasing.git
 ```
 
-## 2. Reference haplotypes of HD population
+### 2. Reference haplotypes of HD population
 
 In the `htt_reference_haplotypes` folder, we provide haplotypes of the French cohort. There are three files in this folder. You don't need to modify these files unless you want to prepare your own reference panel. 
 
@@ -93,7 +94,7 @@ The `HTT_French_cohort_reference.hap` file describes the haplotypes. It is a spa
 
 Details about the file format can be found [here](https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html#haplegsample)
 
-## 3. Example data
+### 3. Example data
 
 We provide an example dataset (unphased genotypes) in the `example_data` folder. The dataset is in PED and MAP format. A detailed description of the formats can be found [here](https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html#formats). 
 
@@ -145,7 +146,7 @@ NOTE:
 
 - There are 51 SNPs in the reference panel but it is OK that the PED/MAP files include more/less SNPs. `SHAPEIT` will do a pre-phasing check to remove SNPs that only exist in the input data (PED/MAP files) or the reference panel. 
 
-## 4. Preprocessing of input data
+### 4. Preprocessing of input data
 
 `SHAPEIT` can only phase SNPs that are in both input data and the reference panel with the same REF/ALT alleles. So the first step is to check the data and remove SNPs that cannot be used for phasing. A data check can be run using the following commands: 
 
@@ -177,9 +178,9 @@ ERROR: Reference and Main panels are not well aligned:
 41 reference panel sites are excluded. This is because these SNPs are homozygous in this sample and `SHAPEIT` failed to find the alternative allele in our data. This error can be ignored because we don't need to phase homozygous SNPs. These sites can be excluded during a formal phasing run. The `output/example1.snp.strand.exclude` file records the positions of these SNPs. 
 
 
-## 5. Phasing
+### 5. Phasing
 
-### 5.1 Output the most likely haplotype
+#### 5.1 Output the most likely haplotype
 
 If you only want to know the most likly haplotype, you can run the following command:
 
@@ -214,7 +215,7 @@ The predicted haplotypes are correct because this sample is one individual in th
 **NOTE: The output haplotype is the haplotype with max probablity. There are still uncertainties and it is recommanded use the following method to capture the phase uncertainty.**
 
 
-### 5.2 Capturing phase uncertainty
+#### 5.2 Capturing phase uncertainty
 
 `SHAPEIT` can produce a haplotype graph and phase uncertainty can be captured by random sampling haplotypes from the graph. So the very first step is to produce the haplotype graph:
 
