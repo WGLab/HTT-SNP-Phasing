@@ -18,6 +18,7 @@ Sometimes long-read sequencing is available and people only have SNP genotypes i
     - [5.1 Output the most likely haplotype](#51-output-the-most-likely-haplotype)
     - [5.2 Capturing phase uncertainty](#52-capturing-phase-uncertainty)
 - [Citation](#citation)
+- [Contact Us](#contact-us)
 
 ## Quick Start
 
@@ -285,3 +286,8 @@ BibTeX format:
 	keywords = {Huntington’s disease, long-read sequencing, CRISPR, SNP, repeat detection}
 }
 ```
+
+## Contact Us
+
+If you need any help from us, you are welcome to raise an issue at the issue page. You can also contact the first author (fangli2718@gmail.com) or the corresponding authors of the paper (wangk@chop.edu, davidsonbl@chop.edu).
+
