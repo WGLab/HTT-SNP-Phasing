@@ -2,7 +2,7 @@
 
 Huntington's disease (HD) is an autosomal dominant neurodegenerative disease. Individuals with HD suffer from progressive motor, cognitive and psychiatric disturbances over the course of 10-20 years. At the molecular level, HD is caused by a CAG trinucleotide repeat expansion in exon-1 of the huntingtin (HTT) gene located at chr4. In the normal population, the CAG repeat is in the range of 6-35. When expanded to >35 repeats, HD is likely to develop. In individuals with 36-39 repeats, there is partial penetrance with full penetrance when there are ≥40 repeats. 
 
-Allele-specific CRISPR/Cas9 editing of the expanded huntingtin (mHTT) can be achived by taking advantage of heterozygous SNPs that either eliminate or create PAM sequences. To identify all potential SNPs that may be used for allele-specific deletion of the mHTT, we sequenced the exon-1 surrounding region (chr4:3069608-3079972, GRCh38) of two HD cohorts with a total of 1056 individuals using long-read sequencing. 
+Allele-specific CRISPR/Cas9 editing of the expanded huntingtin (mHTT) can be achived by taking advantage of heterozygous SNPs that either eliminate or create PAM sequences. To identify all potential SNPs that may be used for allele-specific deletion of the mHTT, we sequenced the exon-1 surrounding region (chr4:3069608-3079972, GRCh38) of two HD cohorts with a total of 1056 individuals using long-read sequencing. The results are published in [this paper](https://doi.org/10.1016/j.xhgg.2022.100146).
 
 
 Sometimes long-read sequencing is available and people only have SNP genotypes identified from SNP arrays or short-read sequencing. In this case, phased SNPs (haplotypes) released in this study can be used as a reference panel for statistical phasing. In this repository, we provide a tutorial for statistical phasing using the HD haplotypes released in this study.  **Please note that results from statistical phasing are based on probabilities and we strongly recommend experimental validation for downstream clinical applications.**
@@ -17,7 +17,7 @@ Sometimes long-read sequencing is available and people only have SNP genotypes i
   - [5. Phasing](#5-phasing)
     - [5.1 Output the most likely haplotype](#51-output-the-most-likely-haplotype)
     - [5.2 Capturing phase uncertainty](#52-capturing-phase-uncertainty)
-
+- [Citation](#citation)
 
 ## Quick Start
 
@@ -261,3 +261,27 @@ This will generate 100 haplotypes in the `./output` folder. Your downstream anal
 NOTE: The seed of each sampling process should be different so that these samples are generated using different random number sequences. 
 
 
+
+## Citation
+
+If you use data released in this study, please cite: 
+
+Fang L, Monteys AM, Dürr A, Keiser M, Cheng C, Harapanahalli A, et al. Haplotyping SNPs for allele-specific gene editing of the expanded huntingtin allele using long-read sequencing. Human Genetics and Genomics Advances. 2023;4(1):100146. DOI: https://doi.org/10.1016/j.xhgg.2022.100146.
+
+BibTeX format:
+
+```
+@article{FANG2023100146,
+	title = {Haplotyping SNPs for allele-specific gene editing of the expanded huntingtin allele using long-read sequencing},
+	journal = {Human Genetics and Genomics Advances},
+	volume = {4},
+	number = {1},
+	pages = {100146},
+	year = {2023},
+	issn = {2666-2477},
+	doi = {https://doi.org/10.1016/j.xhgg.2022.100146},
+	url = {https://www.sciencedirect.com/science/article/pii/S266624772200063X},
+	author = {Li Fang and Alex Mas Monteys and Alexandra Dürr and Megan Keiser and Congsheng Cheng and Akhil Harapanahalli and Pedro Gonzalez-Alegre and Beverly L. Davidson and Kai Wang},
+	keywords = {Huntington’s disease, long-read sequencing, CRISPR, SNP, repeat detection}
+}
+```
